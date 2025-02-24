@@ -11,7 +11,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 bg-[#1e3346] z-1000 shadow-sm">
-      <section className="mx-auto flex max-w-6xl items-center justify-between p-4">
+      <section className="mx-auto flex max-w-7xl items-center justify-between p-4">
         <h1 className="text-3xl font-medium">
           <a href="#hero" className="hover:opacity-60">
             JV Carpena

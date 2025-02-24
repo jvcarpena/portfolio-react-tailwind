@@ -4,7 +4,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="mx-auto max-w-6xl mb-12 flex min-h-[calc(100vh-68px)] scroll-mt-40 flex-col-reverse items-center justify-center gap-12 p-6 sm:flex-row [&@media(max-aspect-ratio:1/1)]:aspect-[13/20]"
+      className="mx-auto max-w-7xl mb-12 flex min-h-[calc(100vh-68px)] scroll-mt-40 flex-col-reverse items-center justify-center gap-8 p-6 sm:flex-row [&@media(max-aspect-ratio:1/1)]:aspect-[13/20]"
     >
       <artcle className="sm:w-1/2">
         <h2 className="max-w-md text-center text-4xl font-bold sm:text-left sm:text-5xl">
