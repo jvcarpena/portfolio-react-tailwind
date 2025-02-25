@@ -12,9 +12,11 @@ function Header() {
   return (
     <header className="sticky top-0 bg-[#1e3346] z-1000 shadow-sm">
       <section className="mx-auto flex max-w-7xl items-center justify-between p-4">
-        <h1 className="text-3xl font-medium">
+        <h1 className="text-2xl font-medium sm:text-3xl">
           <a href="#hero" className="hover:opacity-60">
-            JV Carpena
+            <span className="italic bg-linear-to-r from-[#c9e3fa] to-[#97b3ce] bg-clip-text text-transparent">
+              &lt;JV Carpena /&gt;
+            </span>
           </a>
         </h1>
 

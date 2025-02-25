@@ -20,7 +20,7 @@ function Hero() {
       </artcle>
 
       <img
-        className="w-1/2"
+        className="w-full sm:w-1/2"
         src="./src/assets/images/Programmer-rafiki.png"
         alt="Programmer"
       />
