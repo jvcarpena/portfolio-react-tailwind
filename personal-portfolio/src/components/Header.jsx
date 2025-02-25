@@ -38,13 +38,13 @@ function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden space-x-8 text-xl md:block" aria-label="main">
-            <a href="#projects" className="hover:opacity-60">
+            <a href="#projects" className="hover:opacity-60 font-medium">
               Projects
             </a>
-            <a href="#skills" className="hover:opacity-60">
+            <a href="#skills" className="hover:opacity-60 font-medium">
               Skills
             </a>
-            <a href="#contacts" className="hover:opacity-60">
+            <a href="#contacts" className="hover:opacity-60 font-medium">
               Contact Me
             </a>
           </nav>
