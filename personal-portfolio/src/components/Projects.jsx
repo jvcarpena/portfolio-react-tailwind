@@ -39,7 +39,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="mx-auto max-w-7xl my-12 min-h-[clac(100vh-68px)] scroll-mt-20 p-6 [&@media(max-aspect-ratio:1/1)]:aspect-[13/20]"
+      className="mx-auto max-w-7xl mb-12 min-h-[clac(100vh-68px)] scroll-mt-20 p-6 [&@media(max-aspect-ratio:1/1)]:aspect-[13/20]"
     >
       <h2 className="mb-8 text-4xl bg-linear-to-r from-white to-slate-900 bg-clip-text text-transparent font-bold sm:text-5xl sm:mb-10">
         PROJECTS
