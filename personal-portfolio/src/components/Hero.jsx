@@ -18,7 +18,11 @@ function Hero() {
           technology to solve real-world challenges.
         </p>
         <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
-          <a href="#" className="rounded-xl bg-gray-700 p-2">
+          <a
+            href="https://github.com/jvcarpena"
+            target="_blank"
+            className="rounded-xl bg-gray-700 p-2"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -30,7 +34,11 @@ function Hero() {
             </svg>
           </a>
 
-          <a href="#" className="rounded-xl bg-gray-700 p-2">
+          <a
+            href="https://www.facebook.com/jv.carpena.7"
+            target="_blank"
+            className="rounded-xl bg-gray-700 p-2"
+          >
             <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +50,11 @@ function Hero() {
             </svg>
           </a>
 
-          <a href="#" className="rounded-xl bg-gray-700 p-2">
+          <a
+            href="https://www.instagram.com/carpena.jv/?next=%2F&hl=en"
+            target="_blank"
+            className="rounded-xl bg-gray-700 p-2"
+          >
             <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +66,11 @@ function Hero() {
             </svg>
           </a>
 
-          <a href="#" className="rounded-xl bg-gray-700 p-2">
+          <a
+            href="https://www.linkedin.com/in/jose-victor-carpena-02637a2a3/"
+            target="_blank"
+            className="rounded-xl bg-gray-700 p-2"
+          >
             <svg
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
