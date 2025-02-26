@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <footer className="mx-auto">
-      <h2 className="text-lg font-medium text-center p-6 sm:text-xl">
+      <h2 className="text-lg font-medium text-center p-6 sm:p-8 sm:text-xl">
         © {year} Jose Victor Carpena. All Rights Reserved.
       </h2>
     </footer>
