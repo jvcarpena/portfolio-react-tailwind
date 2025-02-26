@@ -79,7 +79,7 @@ function Projects() {
                     </svg>
                   </a>
                 </div>
-                <p className="mb-6 text-gray-300 text-1xl sm:text-2xl">
+                <p className="mb-6 text-gray-300 text-xl sm:text-2xl">
                   {project.description}
                 </p>
 
