@@ -1,4 +1,5 @@
 import React from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 function Hero() {
   return (
@@ -10,8 +11,19 @@ function Hero() {
         <h2 className="max-w-md mb-6 text-center text-4xl font-bold sm:text-left sm:text-5xl sm:mb-8">
           Hi, I am JV Carpena
         </h2>
-        <p className="bg-linear-to-r from-[#c6dcf0] to-[#67a0d3] bg-clip-text text-transparent text-4xl italic text-center font-bold mb-6 sm:mb-8 sm:text-left sm:text-5xl">
-          Web Developer
+        <p className="text-4xl italic text-center font-bold mb-6 sm:mb-8 sm:text-left sm:text-5xl">
+          {" "}
+          <span className="text-blue-400">
+            <Typewriter
+              words={["Python Developer", "Backend Developer", "Web Developer"]}
+              loop={Infinity}
+              cursor
+              cursorStyle="|"
+              typeSpeed={80}
+              deleteSpeed={70}
+              delaySpeed={800}
+            />
+          </span>
         </p>
         <p className="mb-8 max-w-md text-center text-2xl sm:text-left sm:text-3xl">
           I’m passionate about creating efficient solutions and leveraging
