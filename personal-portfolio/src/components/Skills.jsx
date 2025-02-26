@@ -61,13 +61,22 @@ function Skills() {
         SKILLS
       </h2>
       <p className="text-xl sm:text-2xl mb-4 sm:mb-8">
-        I'm a computer engineering graduate and a full-stack developer with
-        experience in building dynamic and scalable web applications. My
-        expertise spans across Python (Flask, Django), JavaScript (React.js),
-        and databases like PostgreSQL. I love turning ideas into functional,
-        user-friendly applications while prioritizing clean, maintainable code.
-        Currently, I'm focused on enhancing my backend development skills and
-        exploring cloud technologies.
+        I'm a computer engineering graduate and a web developer with experience
+        in building dynamic and scalable web applications. My expertise spans
+        across{" "}
+        <span className="text-blue-400 italic font-bold">
+          Python (Flask, Django)
+        </span>
+        ,{" "}
+        <span className="text-blue-400 italic font-bold">
+          JavaScript (React.js)
+        </span>
+        , and databases like{" "}
+        <span className="text-blue-400 italic font-bold">PostgreSQL</span>. I
+        love turning ideas into functional, user-friendly applications while
+        prioritizing clean, maintainable code. Currently, I'm focused on
+        enhancing my backend development skills and exploring cloud
+        technologies.
       </p>
       <p className="text-xl sm:text-2xl mb-8 sm:mb-12">
         By leveraging modern technologies and robust open-source tools, I
