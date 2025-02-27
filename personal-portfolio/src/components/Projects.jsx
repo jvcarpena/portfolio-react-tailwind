@@ -3,7 +3,7 @@ import React from "react";
 const projects_data = [
   {
     title: "TaskFlow",
-    img_url: "./src/assets/images/to-do-app.jpg",
+    img_url: "/images/to-do-app.jpg",
     description:
       "A web-based application for managing your daily task. It has user-friendly ui and can help you to stay on track of your tasks.",
     git_link: "https://github.com/jvcarpena/TaskFlow-Website",
@@ -11,7 +11,7 @@ const projects_data = [
   },
   {
     title: "Top 10 Movies",
-    img_url: "./src/assets/images/top-movies.jpg",
+    img_url: "/images/top-movies.jpg",
     description:
       "Flask-based web application for managing a movie database. It allows users to add, edit, view, and delete movies.",
     git_link: "https://github.com/jvcarpena/Top-Movies-Website",
@@ -19,7 +19,7 @@ const projects_data = [
   },
   {
     title: "Blog Website",
-    img_url: "./src/assets/images/blog-website.jpg",
+    img_url: "/images/blog-website.jpg",
     description:
       "Sharing ideas, stories, and insights—your daily dose of inspiration. Easily create, edit, and manage your blog posts with full CRUD functionality.",
     git_link: "https://github.com/jvcarpena/Blog-Website",
@@ -27,7 +27,7 @@ const projects_data = [
   },
   {
     title: "Coffee Shops Album",
-    img_url: "./src/assets/images/cafe-web.jpg",
+    img_url: "/images/cafe-web.jpg",
     description:
       "A curated album showcasing the charm and vibe of coffee shops in Calamba City, capturing their unique ambiance and offerings.",
     git_link: "https://github.com/jvcarpena/Coffee-Shops-Album",

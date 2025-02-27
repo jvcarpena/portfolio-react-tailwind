@@ -3,51 +3,51 @@ import React from "react";
 const skills_object = [
   {
     title: "Python",
-    svg_url: "./src/assets/icons/python.svg",
+    svg_url: "/icons/python.svg",
   },
   {
     title: "JavaScript",
-    svg_url: "./src/assets/icons/js.svg",
+    svg_url: "/icons/js.svg",
   },
   {
     title: "HTML",
-    svg_url: "./src/assets/icons/html.svg",
+    svg_url: "/icons/html.svg",
   },
   {
     title: "CSS",
-    svg_url: "./src/assets/icons/css.svg",
+    svg_url: "/icons/css.svg",
   },
   {
     title: "Tailwind",
-    svg_url: "./src/assets/icons/tailwind.svg",
+    svg_url: "/icons/tailwind.svg",
   },
   {
     title: "Bootstrap",
-    svg_url: "./src/assets/icons/bootstrap.svg",
+    svg_url: "/icons/bootstrap.svg",
   },
   {
     title: "React",
-    svg_url: "./src/assets/icons/react.svg",
+    svg_url: "/icons/react.svg",
   },
   {
     title: "Flask",
-    svg_url: "./src/assets/icons/flask.svg",
+    svg_url: "/icons/flask.svg",
   },
   {
     title: "Django",
-    svg_url: "./src/assets/icons/django.svg",
+    svg_url: "/icons/django.svg",
   },
   {
     title: "PostgreSQL",
-    svg_url: "./src/assets/icons/postgre.svg",
+    svg_url: "/icons/postgre.svg",
   },
   {
     title: "Git",
-    svg_url: "./src/assets/icons/git.svg",
+    svg_url: "/icons/git.svg",
   },
   {
     title: "Postman",
-    svg_url: "./src/assets/icons/postman.svg",
+    svg_url: "/icons/postman.svg",
   },
 ];
 
