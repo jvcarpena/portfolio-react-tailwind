@@ -1,90 +1,105 @@
-import React from "react";
 import { Typewriter } from "react-simple-typewriter";
+import { profile, socials } from "../data/content";
 
 function Hero() {
   return (
     <section
-      id="hero"
-      className="mx-auto max-w-7xl mb-12 flex min-h-[calc(100vh-68px)] scroll-mt-40 flex-col-reverse items-center justify-center gap-8 p-6 sm:flex-row [&@media(max-aspect-ratio:1/1)]:aspect-[13/20]"
+      id="top"
+      className="relative isolate overflow-hidden"
+      aria-labelledby="hero-title"
     >
-      <artcle className="sm:w-1/2">
-        <h2 className="max-w-md mb-6 text-center text-4xl font-bold sm:text-left sm:text-5xl sm:mb-8">
-          Hi, I am JV Carpena
-        </h2>
-        <p className="text-4xl italic text-center font-bold mb-6 sm:mb-8 sm:text-left sm:text-5xl">
-          {" "}
-          <span className="text-blue-400">
-            <Typewriter
-              words={["Python Developer", "Backend Developer", "Web Developer"]}
-              loop={Infinity}
-              cursor
-              cursorStyle="|"
-              typeSpeed={80}
-              deleteSpeed={70}
-              delaySpeed={800}
-            />
-          </span>
-        </p>
-        <p className="mb-8 max-w-md text-center text-2xl sm:text-left sm:text-3xl">
-          I’m passionate about creating efficient solutions and leveraging
-          technology to solve real-world challenges.
-        </p>
-        <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
-          <a
-            href="https://github.com/jvcarpena"
-            target="_blank"
-            className="rounded-xl bg-gray-700 p-2"
-          >
-            <img
-              className="w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]"
-              src="/icons/github.svg"
-              alt="github svg"
-            />
-          </a>
-
-          <a
-            href="https://www.facebook.com/jv.carpena.7"
-            target="_blank"
-            className="rounded-xl bg-gray-700 p-2"
-          >
-            <img
-              className="w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]"
-              src="/icons/fb.svg"
-              alt="facebook svg"
-            />
-          </a>
-
-          <a
-            href="https://www.instagram.com/carpena.jv/?next=%2F&hl=en"
-            target="_blank"
-            className="rounded-xl bg-gray-700 p-2"
-          >
-            <img
-              className="w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]"
-              src="/icons/ig.svg"
-              alt="instagram svg"
-            />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/jose-victor-carpena-02637a2a3/"
-            target="_blank"
-            className="rounded-xl bg-gray-700 p-2"
-          >
-            <img
-              className="w-[30px] h-[30px] sm:w-[40px] sm:h-[40px]"
-              src="/icons/linkedin.svg"
-              alt="linkedin svg"
-            />
-          </a>
-        </div>
-      </artcle>
-
-      <img
-        className="w-full sm:w-1/2"
-        src="/images/Programmer-rafiki.png"
-        alt="Programmer"
+      {/* soft background glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 -left-32 -z-10 size-[28rem] rounded-full bg-accent-strong/25 blur-[110px]"
       />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-40 -right-40 -z-10 size-[26rem] rounded-full bg-cyan-400/10 blur-[110px]"
+      />
+
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 md:min-h-[calc(100svh-4rem)] md:grid-cols-[1.15fr_1fr] md:py-20">
+        <div className="animate-fade-up text-center md:text-left">
+          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-1.5 font-mono text-sm text-muted">
+            <span className="size-2 rounded-full bg-ok" aria-hidden="true" />
+            Open to opportunities
+          </p>
+
+          <h1
+            id="hero-title"
+            className="mt-6 text-5xl leading-[1.05] font-bold sm:text-6xl lg:text-7xl"
+          >
+            Hi, I&apos;m{" "}
+            <span className="bg-gradient-to-r from-accent to-cyan-300 bg-clip-text text-transparent">
+              JV Carpena
+            </span>
+          </h1>
+
+          <p
+            className="mt-4 min-h-10 font-mono text-xl text-accent sm:text-2xl"
+            aria-label={profile.roles.join(", ")}
+          >
+            <span aria-hidden="true">
+              <Typewriter
+                words={profile.roles}
+                loop={0}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1400}
+              />
+            </span>
+          </p>
+
+          <p className="mx-auto mt-6 max-w-xl text-lg text-muted md:mx-0">
+            {profile.tagline}
+          </p>
+
+          <div className="mt-9 flex flex-wrap justify-center gap-3 md:justify-start">
+            <a href="#projects" className="btn btn-primary">
+              View my work
+            </a>
+            <a href="#contact" className="btn btn-ghost">
+              Get in touch
+            </a>
+          </div>
+
+          <ul
+            className="mt-9 flex justify-center gap-3 md:justify-start"
+            aria-label="Social links"
+          >
+            {socials.map((s) => (
+              <li key={s.label}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="icon-btn"
+                  aria-label={`${s.label} (opens in a new tab)`}
+                >
+                  <img src={s.icon} alt="" className="size-5" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-md animate-fade-up [animation-delay:150ms]">
+          <div
+            aria-hidden="true"
+            className="absolute inset-6 rounded-full bg-gradient-to-br from-accent-strong/40 to-cyan-400/20 blur-3xl"
+          />
+          <img
+            src="/images/Programmer-rafiki.png"
+            alt="Illustration of a developer working at a desk"
+            width="2000"
+            height="2000"
+            className="relative animate-float drop-shadow-2xl"
+            fetchPriority="high"
+          />
+        </div>
+      </div>
     </section>
   );
 }
