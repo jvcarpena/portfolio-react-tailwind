@@ -1,112 +1,144 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { FORMSPREE_URL, socials } from "../data/content";
+import useReveal from "../hooks/useReveal";
+
+const fieldClass =
+  "mt-2 w-full rounded-xl border border-line bg-bg px-4 py-3 text-fg placeholder:text-muted/70 transition focus:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const ref = useReveal();
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [state, setState] = useState("idle"); // idle | sending | success | error
 
-  const [status, setStatus] = useState(null);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) =>
+    setFormData((d) => ({ ...d, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const response = await fetch("https://formspree.io/f/mbldverl", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      setStatus("Success! Your message has been sent.");
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      setStatus("Oops! Something went wrong.");
+    setState("sending");
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setState("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setState("error");
+      }
+    } catch {
+      setState("error");
     }
   };
 
   return (
     <section
-      id="contacts"
-      className="mx-auto max-w-7xl min-h-[calc(100vh-68px)] mb-8 scroll-mt-20 p-6 [&@media(max-aspect-ratio:1/1)]:aspect-[13/20]"
+      id="contact"
+      ref={ref}
+      className="section"
+      aria-labelledby="contact-title"
     >
-      <h2 className="mb-8 text-4xl font-bold bg-linear-to-r from-white to-slate-900 bg-clip-text text-transparent sm:text-5xl sm:mb-10">
-        Contact Me
-      </h2>
-      <p className="text-center text-xl mb-8 sm:text-2xl">
-        If you'd like to get in touch, feel free to reach out using the form
-        below or via social media above.
-      </p>
+      <div className="reveal rounded-3xl border border-line bg-gradient-to-br from-surface to-surface-2 p-6 sm:p-10 lg:p-14">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
+          <div>
+            <p className="eyebrow">Contact</p>
+            <h2 id="contact-title" className="section-title">
+              Let&apos;s work together
+            </h2>
+            <p className="mt-4 text-muted">
+              Have a project in mind or just want to say hi? Send a message and
+              I&apos;ll get back to you as soon as I can.
+            </p>
 
-      <div className="bg-[#304b64] p-4 rounded-xl sm:rounded-2xl sm:p-6">
-        {status && (
-          <p className="text-center text-green-400 text-xl sm:text-2xl">
-            {status}
-          </p>
-        )}
+            <ul className="mt-8 flex gap-3" aria-label="Social links">
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="icon-btn"
+                    aria-label={`${s.label} (opens in a new tab)`}
+                  >
+                    <img src={s.icon} alt="" className="size-5" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="items-left mx-auto flex flex-col gap-4 text-2xl sm:text-3xl"
-        >
-          <label htmlFor="name" className="text-xl sm:text-2xl">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Enter your name"
-            className="w-full rounded-lg bg-[#08233b] text-gray-200 placeholder-gray-500 placeholder:text-xl sm:rounded-xl sm:mb-2  sm:placeholder:text-2xl p-3 sm:text-2xl"
-          />
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label htmlFor="name" className="font-medium">
+                Name
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autoComplete="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your name"
+                className={fieldClass}
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="font-medium">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autoComplete="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="you@example.com"
+                className={fieldClass}
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="font-medium">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                required
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Tell me about your project…"
+                className={`${fieldClass} resize-y`}
+              />
+            </div>
 
-          <label htmlFor="email" className="text-xl sm:text-2xl">
-            Email
-          </label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="Enter your email"
-            className="w-full rounded-lg bg-[#08233b] text-gray-200 placeholder-gray-500 placeholder:text-xl sm:rounded-xl sm:mb-2 sm:placeholder:text-2xl p-3 sm:text-2xl"
-          />
+            <button
+              type="submit"
+              className="btn btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+              disabled={state === "sending"}
+            >
+              {state === "sending" ? "Sending…" : "Send message"}
+            </button>
 
-          <label htmlFor="message" className="text-xl sm:text-2xl">
-            Message
-          </label>
-          <textarea
-            type="text"
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            cols={30}
-            rows={5}
-            required
-            placeholder="Enter your message"
-            className="w-full rounded-lg bg-[#08233b] text-gray-200 placeholder-gray-500 placeholder:text-xl sm:mb-2 sm:rounded-xl  sm:placeholder:text-2xl p-3 sm:text-2xl"
-          />
-
-          <button
-            type="submit"
-            className="text-xl rounded-lg cursor-pointer bg-[#08233b] p-3 hover:opacity-80 active:opacity-70 sm:rounded-xl sm:mb-2 sm:p-4 sm:text-2xl"
-          >
-            Send Message
-          </button>
-        </form>
+            <p
+              role="status"
+              aria-live="polite"
+              className={`min-h-6 font-medium ${
+                state === "success" ? "text-ok" : "text-err"
+              }`}
+            >
+              {state === "success" && "Thanks! Your message has been sent."}
+              {state === "error" &&
+                "Something went wrong. Please try again in a moment."}
+            </p>
+          </form>
+        </div>
       </div>
     </section>
   );
